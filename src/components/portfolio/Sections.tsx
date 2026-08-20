@@ -5,7 +5,7 @@ import {
 } from "lucide-react";
 import profilePhoto from "@/assets/profile.jpg";
 import formationImg from "@/assets/formation.jpg";
-
+import cv from "@/assets/cv-download.pdf";
 import {
   profile, experiences, projects, education, certifications, stats,
 } from "./data";
@@ -80,7 +80,8 @@ export function Hero() {
 
           <div className="mt-8 flex flex-wrap gap-3">
             <a
-              href="#"
+              href={cv}
+              download="cv-lucasdias.pdf"
               className="inline-flex items-center gap-2 px-5 py-3 rounded-lg font-medium text-primary-foreground transition-transform hover:-translate-y-0.5 glow"
               style={{ background: "var(--gradient-primary)" }}
             >
