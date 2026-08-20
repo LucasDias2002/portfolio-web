@@ -7,15 +7,15 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Lucas Dias — Full Stack Developer" },
+      { title: "Lucas Phillipe — Full Stack Developer" },
       {
         name: "description",
         content:
-          "Portfolio of Lucas Dias, Full Stack Developer specializing in C#, .NET, Angular, SQL, and scalable web applications.",
+          "Portfolio of Lucas Phillipe, Full Stack Developer specializing in C#, .NET, Angular, SQL, and scalable web applications.",
       },
       {
         property: "og:title",
-        content: "Lucas Dias — Full Stack Developer",
+        content: "Lucas Phillipe — Full Stack Developer",
       },
       {
         property: "og:description",

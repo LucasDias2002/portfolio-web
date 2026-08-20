@@ -4,7 +4,7 @@ import personalManagementImg from "@/assets/finance-api.jpg";
 import loginAuthImg from "@/assets/auth-api.jpg";
 
 export const profile = {
-  name: "Lucas Dias",
+  name: "Lucas Phillipe",
   role: "Full Stack Developer",
   tagline:
     "Full Stack Developer focused on creating robust APIs, corporate systems, and scalable web experiences.",

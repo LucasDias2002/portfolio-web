@@ -41,7 +41,7 @@ export function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#home" className="font-display font-bold text-lg">
-          <span className="text-gradient">{"<LD />"}</span>
+          <span className="text-gradient">{"<LP />"}</span>
         </a>
         <ul className="hidden md:flex items-center gap-1">
           {links.map((l) => (
