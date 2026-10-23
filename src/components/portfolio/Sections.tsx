@@ -167,6 +167,7 @@ export function Hero() {
                 alt={`${profile.name}, Full Stack Developer`}
                 width={640}
                 height={800}
+                fetchPriority="high"
                 className="relative w-full aspect-[4/5] max-h-[min(32rem,72vh)] object-cover object-[center_22%] rounded-[1.75rem] ring-1 ring-primary/15"
               />
             </div>

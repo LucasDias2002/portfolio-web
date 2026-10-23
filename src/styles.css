@@ -1,6 +1,10 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@import "@fontsource-variable/outfit/wght.css";
+@import "@fontsource/instrument-serif/latin-400.css";
+@import "@fontsource/instrument-serif/latin-400-italic.css";
+@import "@fontsource/ibm-plex-mono/latin-400.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -31,7 +35,7 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --font-display: "Instrument Serif", Georgia, "Times New Roman";
-  --font-sans: "Outfit", system-ui, sans-serif;
+  --font-sans: "Outfit Variable", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 }
 

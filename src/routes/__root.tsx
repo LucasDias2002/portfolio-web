@@ -9,8 +9,10 @@ import {
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 import favicon from "../assets/favicon.ico";
-
-import appCss from "../styles.css?url";
+import outfitWoff2 from "@fontsource-variable/outfit/files/outfit-latin-wght-normal.woff2?url";
+import instrumentSerifWoff2 from "@fontsource/instrument-serif/files/instrument-serif-latin-400-normal.woff2?url";
+import instrumentSerifItalicWoff2 from "@fontsource/instrument-serif/files/instrument-serif-latin-400-italic.woff2?url";
+import "../styles.css";
 import { reportError } from "../lib/error-reporting";
 
 function NotFoundComponent() {
@@ -102,18 +104,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "image/x-icon",
       },
       {
-        rel: "stylesheet",
-        href: appCss,
-      },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      {
-        rel: "preconnect",
-        href: "https://fonts.gstatic.com",
+        rel: "preload",
+        href: outfitWoff2,
+        as: "font",
+        type: "font/woff2",
         crossOrigin: "anonymous",
       },
       {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap",
+        rel: "preload",
+        href: instrumentSerifWoff2,
+        as: "font",
+        type: "font/woff2",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "preload",
+        href: instrumentSerifItalicWoff2,
+        as: "font",
+        type: "font/woff2",
+        crossOrigin: "anonymous",
       },
     ],
   }),
