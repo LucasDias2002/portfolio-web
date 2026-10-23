@@ -8,7 +8,7 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Lucas Phillipe — Full Stack Developer" },
+      { title: "Lucas Phillipe | .NET & Angular Developer" },
       {
         name: "description",
         content:
