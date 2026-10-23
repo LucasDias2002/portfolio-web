@@ -214,7 +214,7 @@ export function About() {
         </div>
         <aside className="lg:col-span-5 lg:pt-2 space-y-8">
           {[
-            { label: "Currently", value: "Software Development Intern", detail: "Stefanini IHM" },
+            { label: "Currently", value: "Developer I", detail: "Stefanini IHM" },
             { label: "Education", value: "Systems Analysis and Development", detail: "PUC Minas · 2024 — 2026" },
             { label: "Focus", value: "APIs, enterprise systems, web apps", detail: "C#, .NET, Angular, SQL" },
           ].map((item) => (
@@ -304,32 +304,62 @@ export function Skills() {
   );
 }
 
+type ExperienceItem = (typeof experiences)[number];
+
+function groupExperiences(items: ExperienceItem[]) {
+  const groups: { company: string; roles: ExperienceItem[] }[] = [];
+  for (const exp of items) {
+    const last = groups.at(-1);
+    if (last?.company === exp.company) last.roles.push(exp);
+    else groups.push({ company: exp.company, roles: [exp] });
+  }
+  return groups;
+}
+
+function companyPeriod(roles: ExperienceItem[]) {
+  if (roles.length === 1) return roles[0].period;
+  const start = roles[roles.length - 1].period.split("—")[0].trim();
+  const end = roles[0].period.split("—").at(-1)?.trim() ?? "";
+  return `${start} — ${end}`;
+}
+
 export function Experience() {
+  const groups = groupExperiences(experiences);
+
   return (
     <Section id="experience" index="03" eyebrow="Work" title="Professional experience.">
       <ol className="space-y-0">
-        {experiences.map((exp) => (
+        {groups.map((group) => (
           <li
-            key={exp.id}
+            key={group.company}
             className="grid md:grid-cols-12 gap-3 md:gap-8 py-10 border-t border-border first:border-t-0 first:pt-0"
           >
-            <p className="md:col-span-3 font-mono text-xs text-primary tabular-nums pt-1">
-              {exp.period}
-            </p>
-            <div className="md:col-span-9">
-              <h3 className="font-display text-2xl md:text-3xl leading-tight">{exp.role}</h3>
-              <p className="text-muted-foreground mt-1">{exp.company}</p>
-              <ul className="mt-5 space-y-2.5 text-sm text-muted-foreground leading-relaxed max-w-[65ch]">
-                {exp.bullets.map((b) => (
-                  <li key={b} className="grid grid-cols-[0.55rem_1fr] gap-3">
-                    <span className="mt-2 size-1.5 rounded-full bg-primary/80" />
-                    <span>{b}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="font-mono text-[0.65rem] tracking-wide text-muted-foreground mt-5">
-                {exp.stack.join(" · ")}
+            <div className="md:col-span-3 pt-1">
+              <h3 className="font-display text-2xl md:text-3xl leading-tight">{group.company}</h3>
+              <p className="font-mono text-xs text-primary tabular-nums mt-2">
+                {companyPeriod(group.roles)}
               </p>
+            </div>
+            <div className="md:col-span-9 space-y-8">
+              {group.roles.map((exp) => (
+                <article key={exp.id} className="border-t border-border/70 pt-8 first:border-t-0 first:pt-0">
+                  {group.roles.length > 1 ? (
+                    <p className="font-mono text-xs text-primary tabular-nums">{exp.period}</p>
+                  ) : null}
+                  <h4 className={`font-display text-xl md:text-2xl leading-tight ${group.roles.length > 1 ? "mt-1" : ""}`}>{exp.role}</h4>
+                  <ul className="mt-4 space-y-2.5 text-sm text-muted-foreground leading-relaxed max-w-[65ch]">
+                    {exp.bullets.map((b) => (
+                      <li key={b} className="grid grid-cols-[0.55rem_1fr] gap-3">
+                        <span className="mt-2 size-1.5 rounded-full bg-primary/80" />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="font-mono text-[0.65rem] tracking-wide text-muted-foreground mt-5">
+                    {exp.stack.join(" · ")}
+                  </p>
+                </article>
+              ))}
             </div>
           </li>
         ))}

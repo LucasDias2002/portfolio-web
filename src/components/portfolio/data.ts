@@ -17,10 +17,22 @@ export const profile = {
 
 export const experiences = [
   {
+    id: "stefanini-dev-i",
+    company: "Stefanini IHM",
+    role: "Developer I",
+    period: "September 2026 — Present",
+    bullets: [
+      "Contribute to multiple enterprise projects, developing and maintaining solutions across frontend and backend.",
+      "Implement integrations with industrial systems and data platforms, including PI Web API and AF SDK.",
+      "Develop REST APIs and application features using C#, .NET, Angular, and SQL Server.",
+    ],
+    stack: ["C#", ".NET", "Angular", "SQL", "Docker", "RabbitMQ", "Git", "PI Web API", "AF SDK"],
+  },
+  {
     id: "stefanini-dev",
     company: "Stefanini IHM",
     role: "Software Development Intern",
-    period: "April 2026 — Present",
+    period: "April 2026 — August 2026",
     bullets: [
       "Development and maintenance of web applications using C#, .NET, Angular, and SQL.",
       "Development of REST APIs and implementation of frontend features for enterprise applications.",
