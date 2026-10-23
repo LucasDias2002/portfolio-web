@@ -5,6 +5,8 @@ import loginAuthImg from "@/assets/auth-api.jpg";
 
 export const profile = {
   name: "Lucas Phillipe",
+  firstName: "Lucas",
+  lastName: "Phillipe",
   role: "Full Stack Developer",
   tagline:
     "Full Stack Developer focused on creating robust APIs, corporate systems, and scalable web experiences.",
@@ -15,6 +17,7 @@ export const profile = {
 
 export const experiences = [
   {
+    id: "stefanini-dev",
     company: "Stefanini IHM",
     role: "Software Development Intern",
     period: "April 2026 — Present",
@@ -26,6 +29,7 @@ export const experiences = [
     stack: ["C#", ".NET", "Angular", "SQL", "Docker", "RabbitMQ", "Git"],
   },
   {
+    id: "stefanini-support",
     company: "Stefanini IHM",
     role: "Technical Support Intern",
     period: "Jun 2025 — Mar 2026",
@@ -37,6 +41,7 @@ export const experiences = [
     stack: ["Windows", "Microsoft 365", "Hardware", "Networking", "Remote Support"],
   },
   {
+    id: "puc-ta",
     company: "PUC Minas",
     role: "Web Development Teaching Assistant",
     period: "2024 — 2025",
@@ -64,7 +69,7 @@ export const skills = {
     { name: "HTML", level: 95 },
     { name: "CSS", level: 88 },
   ],
-  "Banco de Dados": [
+  Databases: [
     { name: "SQL Server", level: 88 },
     { name: "PostgreSQL", level: 85 },
     { name: "MySQL", level: 82 },
@@ -86,7 +91,7 @@ export const projects = [
     image: salesImg,
     stack: ["C#", ".NET", "RabbitMQ", "Docker"],
     github: "https://github.com/LucasDias2002/sales-microsservices-and-messages",
-    demo: "#",
+    featured: true,
   },
   {
     title: "URL Shortener",
@@ -95,7 +100,7 @@ export const projects = [
     image: urlShortenerImg,
     stack: ["Java", "Spring Boot", "PostgreSQL", "Docker"],
     github: "https://github.com/LucasDias2002/url-shortener",
-    demo: "#",
+    featured: false,
   },
   {
     title: "Personal Management API",
@@ -103,8 +108,8 @@ export const projects = [
       "API desenvolvida para gestão pessoal, permitindo o gerenciamento e organização de informações de forma estruturada e eficiente.",
     image: personalManagementImg,
     stack: ["C#", ".NET", "SQL Server", "Docker"],
-    github: "#",
-    demo: "#",
+    github: "",
+    featured: false,
   },
   {
     title: "Login Auth API",
@@ -113,7 +118,7 @@ export const projects = [
     image: loginAuthImg,
     stack: ["Java", "Spring Boot", "JWT", "BCrypt"],
     github: "https://github.com/LucasDias2002/login-auth-api",
-    demo: "#",
+    featured: false,
   },
 ];
 
@@ -168,11 +173,4 @@ export const certifications = [
     issuer: "Fundação Bradesco",
     year: "2024",
   },
-];
-
-export const stats = [
-  { value: "40+", label: "Projetos concluídos" },
-  { value: "20+", label: "Tecnologias dominadas" },
-  { value: "8", label: "Certificações" },
-  { value: "6", label: "Anos de estudo" },
 ];

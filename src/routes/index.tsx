@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/portfolio/Navbar";
+import { BackToTop } from "@/components/portfolio/BackToTop";
 import {
-  Hero, About, Technologies, Experience, Projects, Formation, Certifications, Stats, Contact, Footer,
+  Hero, About, Technologies, Skills, Experience, Projects, Formation, Certifications, Contact, Footer,
 } from "@/components/portfolio/Sections";
 
 export const Route = createFileRoute("/")({
@@ -22,6 +23,9 @@ export const Route = createFileRoute("/")({
         content:
           "Full Stack Developer focused on .NET, Angular, REST APIs, enterprise applications, and scalable solutions.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
+      { name: "author", content: "Lucas Phillipe" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -32,7 +36,7 @@ export const Route = createFileRoute("/")({
       },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap",
       },
     ],
   }),
@@ -41,13 +45,17 @@ export const Route = createFileRoute("/")({
 
 function Portfolio() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-dvh">
+      <a href="#main" className="skip-link">
+        Skip to content
+      </a>
       <Navbar />
-      <main>
+      <BackToTop />
+      <main id="main">
         <Hero />
         <About />
         <Technologies />
-        {/* <Stats /> */}
+        <Skills />
         <Experience />
         <Projects />
         <Formation />
